@@ -24,7 +24,7 @@ public class TodoResource {
         return TODOS_LIST.get(0);
     }
 
-    // CSRF 토크 요청 한거를 인증 헤더에 넣고 다시 돌리면 사용 가능
+    // CSRF 토큰 요청 한거를 인증 헤더에 넣고 다시 돌리면 사용 가능
     @PostMapping("/users/{username}/todos")
     public void createTodosForSpecificUser(@PathVariable String username, @RequestBody Todo todo) {
         logger.info("Create {} for {}", todo, username);
